@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head") %>
+    <title>Blogify - home</title>
+  </head>
+  <body>
+    <%- include("./partials/nav") %>
+    <div class="container mt-3">
+      <h2>Your Blogs</h2>
+      <%= JSON.stringify(user) %>
+      <p>Bloggssss</p>
+
+      <!-- blogss -->
+      <section class="row align-items-end d-flex justify-content-center">
+        <% blogs.forEach(blog => { %>
+        <div class="col-3 card align-items-center m-2" style="width: 18rem">
+          <img src="<%= blog.coverImageUrl %>" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title"><%= blog.title %></h5>
+
+            <a href="/blog/<%= blog._id %>" class="btn btn-primary">View</a>
+
+            <span>
+              <img
+                width="20px"
+                src="<%= blog.createdBy.profileImageURL %>"
+                alt="df"
+              />
+            </span>
+            <span>By <%= blog?.createdBy.fullName %></span>
+
+            <p class="text-muted mt-2">
+              Published on: <%= blog.createdAt.toLocaleDateString('en-GB', {
+              day: 'numeric', month: 'long', year: 'numeric' }) %>
+            </p>
+          </div>
+        </div>
+        <% }) %>
+      </section>
+    </div>
+
+
+
+    <!-- partials -->
+    <%- include("./partials/script") %>
+  </body>
+</html>

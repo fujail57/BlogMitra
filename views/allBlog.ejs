@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/head") %>
+    <title>Blogify - home</title>
+  </head>
+  <body>
+    <%- include("./partials/nav") %>
+    <h2>All Blogs</h2>
+
+    <% blog.forEach(blog => { %>
+        <div class="card" style="width: 18rem;">
+            <!-- <img src="" class="card-img-top" alt="avtar"> -->
+            <div class="card-body">
+              <h5 class="card-title"><%= blog.title %></h5>
+              <p class="card-text"><%= blog.body %></p>
+              <a href="#" class="btn btn-primary">View</a>
+            </div>
+          </div>
+    
+    <% }) %> <%- include("./partials/script") %>
+  </body>
+</html>
