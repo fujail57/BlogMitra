@@ -1,4 +1,7 @@
-# Front-End Development Internship Assignment
+# BlogMitra – Blogging Platform
+• Developed a secure blogging platform with user signup/login, allowing users to create blog posts, comment, and view authorship details.
+• Implemented authentication using JWT and password encryption with bcrypt for secure user management.
+• Managed data with MongoDB and designed a dynamic frontend using EJS templates and Bootstrap.
 
 ## Project Setup
 
