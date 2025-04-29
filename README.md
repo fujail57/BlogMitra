@@ -24,4 +24,4 @@ npm install
 npm run dev
 ```
 
-The application should now be running on `http://localhost:5173` (or another port if 5173 is in use).
+The application should now be running on `http://localhost:8000` (or another port if 8000 is in use).
