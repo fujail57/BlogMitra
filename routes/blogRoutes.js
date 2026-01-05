@@ -38,12 +38,13 @@ blogRouter.post("/", upload.single("coverImageUrl"), async (req, res) => {
   return res.redirect(`/blog/${blog.id}`);
 });
 
-// fetch all blog
-blogRouter.get("/all-blog", async (req, res) => {
+// fetch my blog ::::::::
+blogRouter.get("/my-blog", async (req, res) => {
   const body = req.body;
-  const allBlogs = await blogDb.find({});
-  return res.render("allBlog", {
-    blog: allBlogs,
+  // const allBlogs = await blogDb.find({});
+  const myBlogs = await blogDb.find({ createdBy: req.user.id }).populate("createdBy");
+  return res.render("myblog", {
+    blogs: myBlogs,
     user: req.user,
   });
 });
