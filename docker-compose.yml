@@ -1,0 +1,30 @@
+services:
+  blogmitra:
+    image: fujail57/blogmitra
+    # build: .
+    container_name: server
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URL: mongodb://mongo:27017/blog
+    networks:
+      - blogmitra-net
+    depends_on:
+      - mongo
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:6
+    container_name: mongo_db
+    networks:
+      - blogmitra-net
+    volumes:
+      - mongo_data:/data/db
+    restart: unless-stopped
+
+networks:
+  blogmitra-net:
+    driver: bridge
+
+volumes:
+  mongo_data:

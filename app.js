@@ -14,7 +14,7 @@ const blogRouter = require("./routes/blogRoutes");
 const blogDb = require("./models/blog");
 
 // port
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 
 // connection
 mongoose
